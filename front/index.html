@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/materialize.min.css" media="screen,projection">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/style.css" media="screen,projection">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>PWEB Hotel</title>
+  </head>
+  <body>
+    <nav class="red darken-4" role="navigation">
+      <div class="nav-wrapper container">
+        <a href="/praktikum9" class="brand-logo white-text">PWEB Hotel</a>
+
+        <ul id="nav-mobile" class="sidenav sidenav-close">
+          <li><a href="#" onclick="getRoomRate();">Room Rate</a></li>
+          <li><a href="#" onclick="getRoomList();">Room List</a></li>
+          <hr>
+          <li><a href="#" onclick="getGuestsList();">Guests List</a></li>
+          <li><a href="#" onclick="getMembersList();">Member List</a></li>
+          <li><a href="newmember.html">Add New Member</a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons white-text">menu</i></a>
+
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col m4 s12 hide-on-med-and-down">
+            <img src="img/hotel1_1080.jpg" alt="PWEB Hotel" class="responsive-img">
+            <br>
+            <button class="btn block red darken-4" onclick="getRoomRate();">Room Rate</button>
+            <button class="btn block red darken-4" onclick="getRoomList();">Room List</button>
+            <hr>
+            <button class="btn block red darken-4" onclick="getGuestsList();">Guests List</button>
+            <button class="btn block red darken-4" onclick="getMembersList();">Member List</button>
+            <a href="newmember.html">
+              <button class="btn block red darken-4">Add New Member</button>
+            </a>
+        </div>
+
+        <div class="col m8 s12">
+          <h3 id='tb_title'>Room Rate</h3>
+
+          <div id="dttable">
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/api.js"></script>
+    <script type="text/javascript" src="js/pwebhotel.js"></script>
+
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function() {
+        getRoomRate();
+      });
+    </script>
+
+  </body>
+</html>

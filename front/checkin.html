@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/materialize.min.css" media="screen,projection">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/style.css" media="screen,projection">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>PWEB Hotel</title>
+  </head>
+  <body>
+    <nav class="red darken-4" role="navigation">
+      <div class="nav-wrapper container">
+        <a href="/index.html" class="brand-logo white-text">PWEB Hotel</a>
+
+        <ul id="nav-mobile" class="sidenav sidenav-close">
+          <li><a href="index.html">Back</a></li>
+          <li><a href="newmember.html">Add New Member</a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons white-text">menu</i></a>
+
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col m8 s12">
+          <h3>Member Check In</h3>
+          <h4>
+            Tn./Ny. <strong><span id="nama_member"></span></strong>
+          </h4>
+
+          <table>
+            <tr>
+              <td width="25%">Address:</td>
+              <td id="member_alamat"></td>
+            </tr>
+            <tr>
+              <td>City:</td>
+              <td id="member_kota"></td>
+            </tr>
+            <tr>
+              <td>Country:</td>
+              <td id="member_negara"></td>
+            </tr>
+            <tr>
+              <td>Zip code:</td>
+              <td id="member_kodepos"></td>
+            </tr>
+            <tr>
+              <td>Telephone:</td>
+              <td id="member_telepon"></td>
+            </tr>
+            <tr>
+              <td>Handphone:</td>
+              <td id="member_hp"></td>
+            </tr>
+          </table>
+
+        </div>
+
+        <div class="col m4 s12">
+            <div class="hide-on-med-and-down">
+              <img src="img/hotel2_1024.jpg" alt="PWEB Hotel" class="responsive-img">
+            </div>
+
+            <a href="index.html">
+              <button class="btn block red darken-4" >Back</button>
+            </a>
+            <hr>
+            <br>
+            <div class="input-field">
+              <select id="roomselect" onchange="enabledcheckin()">
+                <option value="" disabled selected></option>
+              </select>
+              <label for="roomselect">Room for Check In</label>
+            </div>
+            <button id="btcheckedin" class="btn block red darken-4"
+                    onclick="memberCheckIn()" disabled>
+              Check In Now
+            </button>
+          </div>
+
+      </div>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/api.js"></script>
+    <script type="text/javascript" src="js/pwebhotel.js"></script>
+
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function() {
+        //baca parameter `id` dari URL
+        var urlParams = new URLSearchParams(window.location.search);
+        var id = urlParams.get("id");
+
+        //request data member dari API berdasarkan `id`
+        getMemberDetail(id);
+        getRoomAvailable();
+
+      });
+
+      function enabledcheckin() {
+        document.getElementById("btcheckedin").disabled = false;
+      }
+    </script>
+
+  </body>
+</html>

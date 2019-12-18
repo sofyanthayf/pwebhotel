@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/materialize.min.css" media="screen,projection">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/style.css" media="screen,projection">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>PWEB Hotel</title>
+  </head>
+  <body>
+    <nav class="red darken-4" role="navigation">
+      <div class="nav-wrapper container">
+        <a href="/index.html" class="brand-logo white-text">PWEB Hotel</a>
+
+        <ul id="nav-mobile" class="sidenav sidenav-close">
+          <li><a href="index.html">Back</a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons white-text">menu</i></a>
+
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col m8 s12">
+          <h3>New Member</h3>
+          <form>
+
+            <div class="input-field">
+              <input id="nama" name="nama" type="text" class="validate" required>
+              <label for="nama">Name</label>
+            </div>
+
+            <div class="input-field">
+              <input id="alamat" name="alamat" type="text" class="validate" required>
+              <label for="alamat">Address</label>
+            </div>
+
+            <div class="input-field">
+              <input id="kota" name="kota" type="text" class="validate" required>
+              <label for="kota">City</label>
+            </div>
+
+            <div class="input-field">
+              <select id="negara" name="negara">
+                <option value="" disabled selected></option>
+              </select>
+              <label for="negara">Origin Country</label>
+            </div>
+
+            <div class="input-field">
+              <input id="kodepos" name="kodepos" type="text" class="validate" required>
+              <label for="kodepos">Zip code</label>
+            </div>
+
+            <div class="input-field">
+              <input id="telepon" name="telepon" type="text" class="validate" required>
+              <label for="telepon">Telephone</label>
+            </div>
+
+            <div class="input-field">
+              <input id="handphone" name="handphone" type="text" class="validate" required>
+              <label for="handphone">Handphone</label>
+            </div>
+
+          </form>
+        </div>
+
+        <div class="col m4 s12">
+          <div class="hide-on-med-and-down">
+            <img src="img/hotel2_1024.jpg" alt="PWEB Hotel" class="responsive-img">
+          </div>
+          <br>
+          <a href="index.html">
+            <button class="btn block red darken-4" >Cancel</button>
+          </a>
+          <hr>
+          <button id="btsave" class="btn block red darken-4" onclick="newMemberSave()" >Save Member</button>
+
+          <a id="btcheckin" href="#">
+            <button class="btn block red darken-4" >Check In</button>
+          </a>
+
+        </div>
+
+
+      </div>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/api.js"></script>
+    <script type="text/javascript" src="js/pwebhotel.js"></script>
+
+    <script type="text/javascript">
+      getCountries();
+    </script>
+
+  </body>
+</html>
