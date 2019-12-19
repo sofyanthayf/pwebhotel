@@ -1,4 +1,4 @@
-const endpoint_url = 'http://hotel.pweb.local/api';
+const endpoint_url = 'https://hotel.p-web.click/api';
 
 function getRoomRate() {
   fetch(endpoint_url + "/rooms/jumlahkamar")
