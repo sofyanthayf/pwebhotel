@@ -319,5 +319,4 @@ function guestCheckOut() {
       }
   })
   .catch(error);
-
 }
